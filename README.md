@@ -1,5 +1,5 @@
 # Webscraping
-# Pagination scraping example from trustpilot.com 
+# Python code for Pagination scraping example from trustpilot.com 
 
 from bs4 import BeautifulSoup as bs4
 import requests
