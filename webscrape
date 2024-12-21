@@ -1,0 +1,35 @@
+
+import json
+import requests
+import pandas as pd
+from lxml import html
+from bs4 import BeautifulSoup as bs4
+
+pages = []
+allpagedata = []
+gg = []
+
+for i in range(0, 25000):
+    url = ('https://map.rmg.org.bd/factories/{}').format(i)
+    pages.append(url)
+pages
+
+for item in pages:
+    page = requests.get(item)
+    soup = bs4(page.text, 'html.parser')
+    #print(soup.prettify())
+    #company_name.append(soup)
+    for rev in soup.find_all('div'):
+        rev1=rev.get('data-page')
+        allpagedata.append(rev1)
+allpagedata
+
+s = pd.Series(allpagedata)
+
+for item in s:
+    dt = json.loads(item)                                   #To access key-value pairs in a string in Python, you can use the json.loads() function.
+    ss = dt["props"]["factory"]
+    gg.append(ss)
+gg
+
+df2 = pd.json_normalize(gg)
