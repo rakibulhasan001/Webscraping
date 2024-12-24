@@ -9,7 +9,7 @@ pages = []
 allpagedata = []
 gg = []
 
-for i in range(0, 25000):
+for i in range(0, 100):
     url = ('https://webaddress.com/{}').format(i)
     pages.append(url)
 pages
