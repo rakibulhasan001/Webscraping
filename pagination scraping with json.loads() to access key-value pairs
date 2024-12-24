@@ -27,9 +27,9 @@ allpagedata
 s = pd.Series(allpagedata)
 
 for item in s:
-    dt = json.loads(item)                                   #To access key-value pairs in a string in Python, you can use the json.loads() function.
+    dt = json.loads(item)                            #To access key-value pairs in a string in Python, you can use the json.loads() function.
     ss = dt["props"]["factory"]
     gg.append(ss)
 gg
 
-df2 = pd.json_normalize(gg)
+df2 = pd.json_normalize(gg)                          #split all key-value from a string into a panda dataframe using json library; work on list of dictionaries.
