@@ -3,7 +3,7 @@
 
 from bs4 import BeautifulSoup as bs4
 import requests
-import pandas as pd
+import pandas as pd 
 from lxml import html
 import json
 
