@@ -10,7 +10,7 @@ allpagedata = []
 gg = []
 
 for i in range(0, 25000):
-    url = ('https://map.rmg.org.bd/factories/{}').format(i)
+    url = ('https://webaddress.com/{}').format(i)
     pages.append(url)
 pages
 
