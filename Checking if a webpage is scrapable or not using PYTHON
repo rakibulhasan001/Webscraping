@@ -1,0 +1,33 @@
+#Before starging webscraping from a webpage, it should be checked if the page is scrapable or not. 
+#When you send a GET request to a server (for example, using the requests.get(url) method in Python), 
+#the server responds with an HTTP status code to indicate how the request was processed.
+
+#Meaning of HTTP Status Code 200:
+#200 - OK: This status code means the server has successfully processed the request and has returned the desired content in the response body. 
+
+#Without a 200 OK response, there may be an issue with the request (e.g., incorrect URL, server error, or permission issues).
+
+#Other Common HTTP Response Codes:
+#404 - Not Found: This means the requested resource (webpage) does not exist on the server. 
+#      The URL might be incorrect, or the page may have been deleted.
+#403 - Forbidden: The server understood the request, but it refuses to authorize it. 
+#      This often happens if scraping is blocked by the website or if you don't have the right permissions.
+#500 - Internal Server Error: The server encountered an error while processing the request. 
+#      This is a server-side issue.
+#301 - Moved Permanently: The page has been permanently moved to a new URL. 
+#      The server typically provides the new location in the response header.
+#302 - Found (Temporary Redirect): requested resource is temporarily located at a different URL.
+
+.........................
+import requests
+
+url = "https://h1bgrader.com/h1b-cap-exempt-sponsors"
+response = requests.get(url)
+response
+<Response [403]>        #it means the site refuses to authorize it.
+
+url1 = "https://mappedinbangladesh.org/?factoryId=14700"
+response1 = requests.get(url1)
+response1
+<Response [200]>        #it means the site's server has successfully processed the request.
+.........................
